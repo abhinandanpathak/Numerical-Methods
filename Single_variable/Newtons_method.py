@@ -2,16 +2,16 @@ import pandas as pd
 import math as m
 import sympy as s
 
-(p0 , TOL , N) = (1.5 , 0.0000001 , 30)
+(p0 , TOL , N) = (-0.5 , 0.00001 , 30)
 
 data = []
-pd.options.display.float_format = "{:,.10f}".format
+pd.options.display.float_format = "{:,.7f}".format
 def f(x):
-    return (x ** 3) + (4 * x ** 2) - 10
+    return m.cos(m.pi * (x + 1) / 8) + 0.148 * x - 0.9062
 
 def f_der(x0):
     x = s.Symbol('x')
-    y = (x ** 3) + (4 * x ** 2) - 10
+    y = s.cos(s.pi * (x + 1) / 8) + 0.148 * x - 0.9062
     return float(s.diff(y , x).subs(x , x0))
 
 
