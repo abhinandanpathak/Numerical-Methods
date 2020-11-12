@@ -1,12 +1,12 @@
 import pandas as pd
 import math as m
 
-(p0 , p1 , TOL , N) = (0.5 , m.pi / 4 , 0.0000001 , 30)
+(p0 , p1 , TOL , N) = (300 , 500 , 0.0000001 , 30)
 
 data = []
 pd.options.display.float_format = "{:,.10f}".format
 def f(x):
-    return m.cos(x) - x
+    return x * m.cosh(150 / x) - x - 20
 
 
 def secant(p0 , p1 , TOL , N):
