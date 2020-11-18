@@ -1,6 +1,6 @@
 from __future__ import print_function
 import numpy as np
-from simpson_3_8_method import simpsons_3_8
+from simpsons_3_8_method import simpsons_3_8
 
 def print(*args):
     __builtins__.print(*("%.8f" % a if isinstance(a, float) else a for a in args))
